@@ -5,6 +5,7 @@ import pandas as pd
 st.set_page_config(page_title="Calculadora de Imóvel", layout="wide")
 
 def calcular_imovel(valor_inicial, valor_venda, obra, taxa_juros, entrada_percentual, numero_vendas, meses_pagar_ate_vender):
+    
     # Definir o período do financiamento
     periodo_financiamento = 360  # 30 anos
 
@@ -96,7 +97,7 @@ def calcular_imovel(valor_inicial, valor_venda, obra, taxa_juros, entrada_percen
         'Saldo Devedor': saldo_devedor,
         'Valor Total do Financiamento': valor_total_financiamento,
         'Valor das Parcelas do Financiamento': valor_parcela,
-        'Número de Meses que Prevé Pagar até Vender': parcelas_ate_vender,
+        'Número de Meses que Prevê Pagar até Vender': parcelas_ate_vender,
         'Custo Total das Parcelas do Financiamento até Vender': custo_total_parcelas_ate_vender,
         'Despesas (70% do Faturamento Bruto)': despesas
     }
