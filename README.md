@@ -5,6 +5,7 @@ No competitivo mundo dos investimentos imobiliários, tomar decisões financeira
 
 
 🔧 Funcionalidades Revolucionárias
+
 ✨ Cálculo Preciso do Financiamento:
 Determina o valor necessário para o financiamento e calcula as parcelas mensais com base na taxa de juros anual e no prazo de 30 anos. Obtém uma visão clara dos compromissos financeiros ao longo do tempo.
 
