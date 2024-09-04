@@ -122,7 +122,7 @@ obra = st.number_input('Valor da Obra:', min_value=0.0, format="%.2f")
 taxa_juros = st.number_input('Taxa de Juros Anual (%):', min_value=0.0, format="%.2f")
 entrada_percentual = st.slider('Percentual de Entrada (%):', min_value=0, max_value=100, value=20)
 numero_vendas = st.number_input('Número de Vendas:', min_value=1, format="%d")
-meses_pagar_ate_vender = st.number_input('Número de Meses que Prevé Pagar até Vender:', min_value=1, format="%d")
+meses_pagar_ate_vender = st.number_input('Número de Meses que PrevVPrevê Pagar até Vender:', min_value=1, format="%d")
 
 if st.button('Calcular Imóvel'):
     # Calcular resultados
@@ -158,7 +158,7 @@ if st.button('Calcular Imóvel'):
             f'R$ {resultados["Saldo Devedor"]:,.2f}',
             f'R$ {resultados["Valor Total do Financiamento"]:,.2f}',
             f'R$ {resultados["Valor das Parcelas do Financiamento"]:,.2f}',
-            f'{resultados["Número de Meses que Prevé Pagar até Vender"]} meses',
+            f'{resultados["Número de Meses que Prevê Pagar até Vender"]} meses',
             f'R$ {resultados["Custo Total das Parcelas do Financiamento até Vender"]:,.2f}',
             f'R$ {resultados["Despesas (70% do Faturamento Bruto)"]:,.2f}'
         ]
