@@ -1,10 +1,10 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
-import locale
 
-# Configura o locale para formato brasileiro
-locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+# Função para formatar valores monetários
+def formatar_moeda(valor):
+    return f"R${valor:,.2f}"
 
 # Funções para calcular rendimentos
 def calcular_rendimento_renda_fixa(valor_investido, taxa_juros, tempo, aportes_mensais, taxa_inflacao):
@@ -112,16 +112,11 @@ if st.button("Calcular"):
     renda_anual_patrimonio = renda_mensal_patrimonio * 12
 
     # Cálculo de ganhos diários
-    ganho_diario_total = renda_mensal_real / 30
     ganho_diario_real = ganho_real / (tempo_fixa * 12 * 30) if (tempo_fixa * 12 * 30) > 0 else 0
 
     # Cálculo da rentabilidade mensal em porcentagem
     rentabilidade_mensal_fixa = ((retorno_fixa - valor_fixa - total_aportes_fixa) / (tempo_fixa * 12)) / (valor_fixa + total_aportes_fixa) * 100 if (valor_fixa + total_aportes_fixa) > 0 else 0
     rentabilidade_mensal_variavel = ((retorno_variavel - valor_variavel - total_aportes_variavel) / (tempo_variavel * 12)) / (valor_variavel + total_aportes_variavel) * 100 if (valor_variavel + total_aportes_variavel) > 0 else 0
-
-    # Função para formatar valores como moeda
-    def formatar_moeda(valor):
-        return locale.currency(valor, grouping=True)
 
     # Exibe resultados detalhados em tabelas
     with st.expander("Investimento e Retorno Esperado"):
@@ -155,5 +150,3 @@ if st.button("Calcular"):
         st.write("**Rentabilidade Mensal**")
         st.write(f"Rentabilidade Mensal em Renda Fixa: {rentabilidade_mensal_fixa:.2f}%")
         st.write(f"Rentabilidade Mensal em Renda Variável: {rentabilidade_mensal_variavel:.2f}%")
-
-    # Adicione mais análises e visualizações conforme necessário
