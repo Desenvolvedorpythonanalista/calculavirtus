@@ -1,6 +1,5 @@
 import streamlit as st
 import matplotlib.pyplot as plt
-
 import numpy as np
 import locale
 
@@ -45,7 +44,8 @@ aportes_mensais_variavel = st.number_input("Aportes Mensais em Renda Variável (
 if st.button("Calcular"):
     # Calcula o rendimento em renda fixa ajustado pela inflação
     if valor_fixa > 0:
-        rendimentos_fixa = [calcular_rendimento_renda_fixa(valor_fixa, taxa_fixa, tempo_fixa, aportes_mensais_fixa, taxa_inflacao)]
+        rendimento_fixa = calcular_rendimento_renda_fixa(valor_fixa, taxa_fixa, tempo_fixa, aportes_mensais_fixa, taxa_inflacao)
+        rendimentos_fixa = [rendimento_fixa]
     else:
         rendimentos_fixa = []
 
@@ -146,7 +146,7 @@ if st.button("Calcular"):
         st.write(f"Proventos mensais depois do período: {formatar_moeda(renda_mensal_patrimonio)}")
 
     with st.expander("Proventos com Base no Ganho Real (Com base no rendimento)"):
-        st.write("**Proventos coom Base no Ganho Real ( RENDIMENTO )**")
+        st.write("**Proventos com Base no Ganho Real (RENDIMENTO)**")
         st.write(f"Proventos Anuais Reais depois do período: {formatar_moeda(renda_anual_real)}")
         st.write(f"Proventos Mensais Reais depois do período: {formatar_moeda(renda_mensal_real)}")
         st.write(f"Proventos Diários Reais depois do período: {formatar_moeda(ganho_diario_real)}")
